@@ -12,9 +12,23 @@ code {
     monospace;
 }
 
+.Container {
+  max-width: 960px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 15px;
+  padding-right: 15px;
+  padding-top: 15px;
+}
+
+.notes-list {
+  display: grid;
+  grid-gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+}
+
 .note {
   background-color: #2ecc71;
-  margin-bottom: 10px;
   border-radius: 10px;
   padding: 1rem;
   min-height: 170px;
