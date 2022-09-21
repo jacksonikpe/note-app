@@ -25,9 +25,22 @@ const App = () => {
       date: "18/04/2021"
     },
   ])
+
+  const saveNote = (text) => {
+    let date = new Date()
+    let note = {
+        id: nanoid(),
+        text,
+        date: date.toLocaleDateString()
+      }
+    
+    let newNotes = [...notes, note ]
+    setNotes(newNotes)
+  }
+
   return (
     <div className="Container">
-      <NotesList notes={notes} />
+      <NotesList notes={notes} saveNote={saveNote} />
     </div>
   )
 }

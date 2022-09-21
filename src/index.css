@@ -35,10 +35,35 @@ code {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  white-space: pre-wrap;
+}
+
+.note.new {
+  background-color: #34495e;
+  color: #fff;
+}
+
+textarea {
+  border: none;
+  background-color: #34495e;
+  color: #fff;
+  resize: none;
+}
+
+textarea:focus {
+  outline: 0;
 }
 
 .note-footer {
   display: flex;
   align-items: center;
   justify-content: space-between;
+}
+
+.save {
+  background-color: #e1e1e1;
+  border: none;
+  border-radius: 15px;
+  padding: 5px 10px;
+  cursor: pointer;
 }
