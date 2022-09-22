@@ -67,3 +67,7 @@ textarea:focus {
   padding: 5px 10px;
   cursor: pointer;
 }
+
+.delete-icon {
+  cursor: pointer;
+}
