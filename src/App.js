@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { nanoid } from 'nanoid';
 import NotesList from './components/NotesList';
 import Search from './components/Search';
@@ -30,6 +30,19 @@ const App = () => {
 
   const [searchText, setSearchText] = useState('')
   const [darkMode, setDarkMode] = useState(false)
+
+  //retrieve note data from local storage
+  useEffect(() => {
+    let noteData = JSON.parse(localStorage.getItem('note-app-data')); 
+    if(noteData) {
+      setNotes(noteData);
+    }
+  },[])
+
+  //send note data to local storage
+  useEffect(() => {
+    localStorage.setItem('note-app-data', JSON.stringify(notes))
+  },[notes])
 
   const saveNote = (text) => {
     let date = new Date()
